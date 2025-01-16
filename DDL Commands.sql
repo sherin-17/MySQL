@@ -28,6 +28,8 @@ drop column grade;
 
 rename table student to classten;
 
+DESC classten;
+
 truncate table classten;
 
 drop table classten;
