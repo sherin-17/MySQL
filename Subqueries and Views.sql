@@ -33,11 +33,12 @@ create table customer(
 desc customer;
     
 insert into customer (first_name, last_name, email, phone_no, address, city, state, zip_code, country)
-values ('Yadhu','Krishna', 'yadhukrishna@gmail.com, 1234567890, '123 main street','Palakkad','Kerala','987654','India'),
-('Alex','jose', 'alexjose@gmail.com, 9876543210, '333 MG road','Kozhikode''Kerala','678123','India'),
-('divya','rajan', 'divyarajan@gmail.com, 8765432190, 'Flat 4B HN Street','Malappuram','Kerala','8765432','India'),
-('rudhra','veena', 'rudhraveena@gmail.com, 7865432190, '44 payyoli','Palakkad','Kerala','675432','India'),
-('Albin','christy', 'albinchristy@gmail.com, 7654321789, 'Flat 13A kochi','Ernakulam','Kerala','789654','India');
+values ('Anu', 'jose', 'anujose@gmail.com', '1234567890', 'Flat 14B Aluva', 'Kochi', 'Kerala', '789654', 'India'),
+('yadhu', 'krishna', 'yadhukrishna@gmail.com','7896543210', '123 SG street', 'Palakkad', 'Kerala', '8765432', 'India'),
+('ann', 'maria', 'annmaria@gmail.com', '81234567890', '123 SM steet', 'Malappuram', 'Kerala', '567234', 'India'),
+('Athulya', 'krishna', 'athulyakrishna@gmail.com', '678945312', 'Flat 3A ', 'Kozhikode', 'Kerala', '567899', 'India'),
+('Anas', 'Muhammed', 'anasmuhammed@gmail.com', '6234567890', '13 Main street', 'palakkad', 'kerala', '654456', 'india'),
+
 
 select  from customer;
 
@@ -53,7 +54,7 @@ create view customer_details as select concat (first_name,' ',last_name) full na
 
 select *from customer_details;
 
-update Customer_details set Phone_no=9900876541 where state='California';
+update Customer_details set Phone_no =9900876541 where state ='California';
 
 select * from Customer_details;
 
@@ -64,4 +65,5 @@ select State,count(*) customer_count from customer group by state having count(
 select state, count(*) customer_count from customer_details group by state;
 
 select * from customer_details order by state;
+
 
