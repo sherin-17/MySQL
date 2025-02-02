@@ -46,11 +46,11 @@ values (1, 'USA', 331002651, 9833520),
   
   select *from persons;
   
-select left(country_name,3) firstthreecharacters from country;
+select left(country_name,3)  from country;
 
 select concat(fname,' ', lname) full_name from persons;
 
-select count(DISTINCT country_name) from persons;
+select count(DISTINCT country_name)'unique countries' from persons;
 
 select max(population) from country;
 
@@ -59,7 +59,8 @@ select min(population) from persons;
  insert into persons(id, fname, lname, population, rating, country_id, country_name)
   values (111,'Rex', 'null', 331002651, 4.5, 1, 'Germany'),
   (112, 'nada', 'null', 37742154, 4.2, 2, 'India');
-select count(lname) from persons;
+select *from persons;
+select count(lname) count_lname from persons;
 
 select count(*) from persons;
 
@@ -71,9 +72,9 @@ select *from persons order by rating desc;
 
 select country_name, sum(population)  totalpopulation from persons group by country_name;
 
-select country_name, sum(population)  total_population from persons group by country_name having sum(population)>50000;
+select country_name, sum(population)  from persons group by country_name having sum(population)>50000;
 
-select country_name, count(*)as totalpersons, avg(rating) as average_rating from persons group by country_name having count(*)>2 order by average_rating ASC;
+select count(*), country_name, avg(rating) from persons group by country_name having count(*)>=2 order by avg(rating);
 
 
 
