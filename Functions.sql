@@ -13,12 +13,14 @@ update persons set dob = '1983-09-24' where id = 10;
 
 select * from persons;
 
-create function calculate_age(dob date)
+delimiter #
+  create function calculate_age(dob date)
 returns INT
 deterministic
 begin
-return timesstampdiff(year,dob,curdate());
-end;
+   return timesstampdiff(year,dob,curdate());
+end #
+  delimiter;
 
 select id,fname,lname,dob,calculate_age(dob) as age from persons;
 
